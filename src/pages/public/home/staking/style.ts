@@ -21,6 +21,7 @@ export const StakingContainer = styled.div`
 `;
 
 export const StatusCard = styled.div<{ bg?: string, isLast?: boolean }>`
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 25px;
@@ -71,4 +72,41 @@ export const StakingHeader = styled.div`
     font-weight: 500;
     line-height: 52px;
     letter-spacing: -.05rem;
+`
+
+export const TextContainer = styled.div`
+    position: absolute;
+    top: calc(50% - 125px);
+    left: calc(50% - 125px);
+
+    width: 250px;
+    height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: red;
+
+`
+
+export const CustomCaption = styled.div`
+    font-family: 'Circular';
+    font-size: 18px;
+    color: #6d7380;
+    margin-bottom: 10px;
+    @media screen and (max-width: 425px){
+        font-size: 14px;
+    }
+`;
+
+export const CustomFont = styled.div`
+    font-family: 'Circular Book';
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--primary);
+    margin-bottom: 10px;
+    @media screen and (max-width: 425px){
+        font-size: 1.7rem;
+    }
 `

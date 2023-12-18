@@ -1,5 +1,5 @@
 import React from 'react'
-import { OptionContainer, OptionTextContainer, RadioButton, StakingContainer, StatusCard } from './style'
+import { CustomCaption, CustomFont, OptionContainer, OptionTextContainer, RadioButton, StakingContainer, StatusCard, TextContainer } from './style'
 import { Flex, Grid, Heading, P, Span } from '@/components/basic'
 import { Icon } from '@/components/custom';
 import Chart from './chart';
@@ -41,6 +41,11 @@ const Staking = () => {
             <Grid $style={{ rows: '1', columns: '1' }}>
                 <StatusCard isLast>
                     <Chart />
+                    <TextContainer>
+                        <CustomCaption $style={{  }}>v0.2 Community Pool</CustomCaption>
+                        <CustomFont>40,875,000</CustomFont>
+                        <CustomCaption>/40,875,000 Link</CustomCaption>
+                    </TextContainer>
                     <OptionContainer>
                         <OptionTextContainer>
                             <RadioButton bg={GV('primary')} />
