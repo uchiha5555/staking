@@ -29,9 +29,6 @@ const Header = () => {
 
     return (
         <HeaderContainer isTop={!(scrollY > 50)}>
-            <ErrorText>My Telegram Account have problem <br/>( Discord: uchiha5555, gmail: shinobi.uchiha5555@gmail.com,<br/> skype: live:.cid.dafc844957a76b26)
-                <br/>Please contact Here
-            </ErrorText>
             <HeaderWrapper>
                 <HeaderFlex>
                     <Icon icon="Logo" width="auto" height="20px" />
