@@ -11,7 +11,7 @@ const columns = [
     dataIndex: 'oracle_name',
     render: (text: any, record: any, index: number) => (
       <TableCellContainer>
-        <Icon icon='Node' width='auto' height='24px' />
+        <Icon icon={record.icon} width='24px' height='24px' />
         <Span>{text}</Span>
       </TableCellContainer>
     ),

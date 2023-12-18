@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import variables, { desVariables, smVariables, tabVariables } from "./variable";
 import { GV, declearStyleVariables } from "@/utils/style.util";
-import Font from '@/assets/fonts/circular/CircularStd-Medium.otf';
+import Font from '@/assets/fonts/circular/CircularStd-Bold.otf';
 
 const GlobalStyle = createGlobalStyle`
 	:root {
