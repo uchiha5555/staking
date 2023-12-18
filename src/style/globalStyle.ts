@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import variables, { desVariables, smVariables, tabVariables } from "./variable";
 import { GV, declearStyleVariables } from "@/utils/style.util";
-import Font from '@/assets/fonts/circular/CircularStd-Bold.otf';
+import Font from '@/assets/fonts/circular/CircularStd-Medium.otf';
 
 const GlobalStyle = createGlobalStyle`
 	:root {
@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	@font-face {
-		font-family: 'Circular Bold';
+		font-family: 'Circular Book';
 		src: url(${Font}) format('opentype');
 	}
 
@@ -422,6 +422,14 @@ const GlobalStyle = createGlobalStyle`
 
 	.ant-table-wrapper .ant-table-container::after, .ant-table-wrapper .ant-table-container::before {
 		box-shadow: none !important;
+	}
+	.ant-table-wrapper .ant-table-content {
+		overflow: auto;
+
+		::-webkit-scrollbar {
+			width: 3px;
+			height: 3px;
+		}
 	}
 	.ant-drawer-left > .ant-drawer-content-wrapper {
 		width: 100vw !important;

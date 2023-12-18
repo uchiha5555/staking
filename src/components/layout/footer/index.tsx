@@ -1,6 +1,6 @@
 import React from 'react'
-import { CopyrightContainer, CopyrightFont, CopyrightFont1, CopyrightFont2, CopyrightWrapper, CustomFlex, CustomFlex2, FooterContainer, FooterWrapper } from './style';
-import { Flex, Grid, P } from '@/components/basic';
+import { CopyrightContainer, CopyrightFont, CopyrightFont1, CopyrightFont2, CopyrightWrapper, CustomFlex, CustomFlex2, FooterColumnWrapper, FooterContainer, FooterWrapper } from './style';
+import { Flex, Grid, Heading, P } from '@/components/basic';
 import { Icon } from '@/components/custom';
 
 const Footer = () => {
@@ -12,6 +12,7 @@ const Footer = () => {
             columns: '4',
             gap: '48px',
             w: '100%',
+            justifyContent: 'center',
             queries: {
               912: {
                 columns: '3'
@@ -24,116 +25,116 @@ const Footer = () => {
               }
             }
           }}>
-            <Flex $style={{ fDirection: 'column', gap: '16px', w: '260px' }}>
-              <P $style={{ size: '15px', color: 'color' }}>Developers</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Docs</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Faucets</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Developer Hub</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Developer Experts</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Chainlink Hackathon</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Bootcamp</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Use Cross-Chain (CCIP)</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Use Data Feeds</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Use Randomness (VRF)</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Use Automation</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Use Functions</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Node Operators</P>
-            </Flex>
-            <Flex $style={{ fDirection: 'column', gap: '16px', w: '260px' }}>
-              <P $style={{ size: '15px', color: 'color' }}>Products</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Cross-Chain</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Faucets</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Data Streams</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Market and Data Feeds</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Functions</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>VRF</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Automation</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Proof of Reserve</P>
-            </Flex>
-            <Flex $style={{ fDirection: 'column', gap: '16px', w: '260px' }}>
-              <P $style={{ size: '15px', color: 'color' }}>Use Cases</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Overview</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Financial Services</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>DeFi</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Gaming</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>NFT Collectibles</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Climate Markets</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Enterprise</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Insurance</P>
-            </Flex>
-            <Flex $style={{ fDirection: 'column', gap: '16px', w: '260px' }}>
-              <P $style={{ size: '15px', color: 'color' }}>Community</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Community Overview</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Grant Program</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Events</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Become an Advocate</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Code of Conduct</P>
-            </Flex>
-            <Flex $style={{ fDirection: 'column', gap: '16px', w: '260px' }}>
-              <P $style={{ size: '15px', color: 'color' }}>Resources</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Whitepaper</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Case Studies</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Tech Talks</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Blog</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Economics 2.0</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Staking</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>FAQs</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Education Hub</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>What Is DeFi?</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>What Is an Oracle?</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>What Is a Smart Contract?</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>What Is an NFT?</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>What Is Web3?</P>
-            </Flex>
-            <Flex $style={{ fDirection: 'column', gap: '16px', w: '260px' }}>
-              <P $style={{ size: '15px', color: 'color' }}>Chainlink</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Ecosystem</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Data Providers</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Press</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Team</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Circulating Supply</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Brand Assets</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Chainlink Badging</P>
-            </Flex>
-            <Flex $style={{ fDirection: 'column', gap: '16px', w: '260px' }}>
-              <P $style={{ size: '15px', color: 'color' }}>Contact</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Talk to an Expert</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Security</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Support</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Custom Chainlinks</P>
-              <P $style={{ size: '16px', color: 'color-secondary' }}>Press Inquiries</P>
-            </Flex>
-            <Flex $style={{ fDirection: 'column', gap: '16px', w: '260px' }}>
-              <P $style={{ size: '15px', color: 'color' }}>Social</P>
+            <FooterColumnWrapper>
+              <Heading level={6} $style={{ color: 'white', weight: '500', mb: '32px !important' }}>Developers</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Docs</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Faucets</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Developer Hub</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Developer Experts</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Chainlink Hackathon</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Bootcamp</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Use Cross-Chain (CCIP)</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Use Data Feeds</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Use Randomness (VRF)</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Use Automation</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Use Functions</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Node Operators</Heading>
+            </FooterColumnWrapper>
+            <FooterColumnWrapper>
+              <Heading level={6} $style={{ color: 'white', weight: '500', mb: '32px !important' }}>Products</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Cross-Chain</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Faucets</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Data Streams</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Market and Data Feeds</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Functions</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>VRF</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Automation</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Proof of Reserve</Heading>
+            </FooterColumnWrapper>
+            <FooterColumnWrapper>
+              <Heading level={6} $style={{ color: 'white', weight: '500', mb: '32px !important' }}>Use Cases</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Overview</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Financial Services</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>DeFi</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Gaming</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>NFT Collectibles</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Climate Markets</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Enterprise</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Insurance</Heading>
+            </FooterColumnWrapper>
+            <FooterColumnWrapper>
+              <Heading level={6} $style={{ color: 'white', weight: '500', mb: '32px !important' }}>Community</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Community Overview</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Grant Program</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Events</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Become an Advocate</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Code of Conduct</Heading>
+            </FooterColumnWrapper>
+            <FooterColumnWrapper>
+              <Heading level={6} $style={{ color: 'white', weight: '500', mb: '32px !important' }}>Resources</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Whitepaper</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Case Studies</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Tech Talks</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Blog</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Economics 2.0</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Staking</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>FAQs</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Education Hub</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>What Is DeFi?</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>What Is an Oracle?</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>What Is a Smart Contract?</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>What Is an NFT?</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>What Is Web3?</Heading>
+            </FooterColumnWrapper>
+            <FooterColumnWrapper>
+              <Heading level={6} $style={{ color: 'white', weight: '500', mb: '32px !important' }}>Chainlink</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Ecosystem</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Data Providers</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Press</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Team</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Circulating Supply</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Brand Assets</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Chainlink Badging</Heading>
+            </FooterColumnWrapper>
+            <FooterColumnWrapper>
+              <Heading level={6} $style={{ color: 'white', weight: '500', mb: '32px !important' }}>Contact</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Talk to an Expert</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Security</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Support</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Custom Chainlinks</Heading>
+              <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Press Inquiries</Heading>
+            </FooterColumnWrapper>
+            <FooterColumnWrapper>
+              <Heading level={6} $style={{ color: 'white', weight: '500', mb: '32px !important' }}>Social</Heading>
               <Flex $style={{ vAlign: 'center', gap: '8px' }}>
                 <Icon icon='Twitter' />
-                <P $style={{ size: '16px', color: 'color-secondary' }}>Twitter</P>
+                <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Twitter</Heading>
               </Flex>
               <Flex $style={{ vAlign: 'center', gap: '8px' }}>
                 <Icon icon='Youtube' />
-                <P $style={{ size: '16px', color: 'color-secondary' }}>YouTube</P>
+                <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>YouTube</Heading>
               </Flex>
               <Flex $style={{ vAlign: 'center', gap: '8px' }}>
                 <Icon icon='Discord' />
-                <P $style={{ size: '16px', color: 'color-secondary' }}>Discord</P>
+                <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Discord</Heading>
               </Flex>
               <Flex $style={{ vAlign: 'center', gap: '8px' }}>
                 <Icon icon='Telegram' />
-                <P $style={{ size: '16px', color: 'color-secondary' }}>Telegram</P>
+                <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Telegram</Heading>
               </Flex>
               <Flex $style={{ vAlign: 'center', gap: '8px' }}>
                 <Icon icon='WeChat' />
-                <P $style={{ size: '16px', color: 'color-secondary' }}>WeChat</P>
+                <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>WeChat</Heading>
               </Flex>
               <Flex $style={{ vAlign: 'center', gap: '8px' }}>
                 <Icon icon='Reddit' />
-                <P $style={{ size: '16px', color: 'color-secondary' }}>Reddit</P>
+                <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Reddit</Heading>
               </Flex>
               <Flex $style={{ vAlign: 'center', gap: '8px' }}>
                 <Icon icon='Kakao' />
-                <P $style={{ size: '16px', color: 'color-secondary' }}>Kakao</P>
+                <Heading level={6} $style={{ color: 'color-secondary', weight: '400' }}>Kakao</Heading>
               </Flex>
-            </Flex>
+            </FooterColumnWrapper>
           </Grid>
         </FooterWrapper>
       </FooterContainer>

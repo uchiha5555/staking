@@ -1,3 +1,4 @@
+import { GV } from "@/utils/style.util";
 import React from "react";
 import {
   RadialBarChart,
@@ -10,7 +11,7 @@ const data = [
   {
     name: "40,875,000",
     value: 1,
-    fill: "#83a6ed",
+    fill: GV('primary'),
   },
 ];
 
@@ -39,11 +40,12 @@ export default function Chart() {
         <text
           x={cx}
           y={cy}
-          fill="#375bd2"
+          fill={GV('header')}
           textAnchor="middle"
           dominantBaseline="middle"
-          fontFamily="circular"
-          fontSize={30}
+          fontFamily="Circular Book"
+          fontWeight={400}
+          fontSize={'2.5rem'}
         >
           {name}
         </text>
@@ -66,11 +68,11 @@ export default function Chart() {
     <div style={{ width: "100%", height: '100%' }}>
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
-          innerRadius="80%"
-          outerRadius="100%"
+          innerRadius="90%"
+          outerRadius="110%"
           data={data}
-          startAngle={-45}
-          endAngle={225}
+          startAngle={-40}
+          endAngle={220}
         >
           <RadialBar
             background

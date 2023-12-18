@@ -72,11 +72,10 @@ const setStyle = ({
 		` : ``}
     & > * {
       &:not(:last-child) {
-        ${gap ? `margin-right: ${gap}` : ``};
-        ${gap ? `margin-bottom: ${gap}` : ``};
+        ${fDirection === 'row' && gap ? `margin-right: ${gap}` : ``};
         @media (max-width: 479px) {
           margin-right: 0px;
-          ${gap ? `margin-bottom: ${gap}` : ``};
+          ${fDirection === 'column' && gap ? `margin-bottom: ${gap}` : ``};
         }
       }
     }

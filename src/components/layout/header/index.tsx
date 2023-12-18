@@ -1,24 +1,28 @@
 import { Icon } from "@/components/custom";
-import { HeaderActionContainer, HeaderContainer, HeaderCustomButton, HeaderFlex, HeaderFont, HeaderWrapper, IconContainer, LastNavItem, MobileHeaderCustomButton, MobileMenuIcon, MobileMenuItem, NavItem, NavList } from "./style";
+import { HeaderActionContainer, HeaderButton, HeaderContainer, HeaderFlex, HeaderFont, HeaderWrapper, IconContainer, LastNavItem, MobileMenuIcon, MobileMenuItem, NavItem, NavList } from "./style";
 import { Drawer } from "antd";
 import { useEffect, useState } from "react";
 import useScroll from "@/hooks/useScroll";
 import { Flex, Span } from "@/components/basic";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import _ROUTERS from "@/constants/route.constant";
 
 import Wallet from '@/assets/img/wallet-1.svg';
 import Ether from '@/assets/img/ethereum.svg';
 import Image from "@/components/basic/img";
 
+import WalletFilled from '@/assets/img/wallet_filled.svg';
+
 const Header = () => {
+    const navigate = useNavigate();
     const [visible, setVisible] = useState(false);
     const [, scrollY,] = useScroll();
     const { hash, pathname, search } = useLocation();
-    const [name, setName] = useState('Detecting wallet')
+    const [name, setName] = useState('Connect Wallet')
 
     useEffect(() => {
         if (pathname === _ROUTERS._REWARDS) {
+            setName('Detecting Wallet');
             setTimeout(() => {setName('Connect Wallet')}, 1000);
         }
     }, [pathname]);
@@ -42,15 +46,17 @@ const Header = () => {
                     </MobileMenuIcon>
                 </HeaderFlex>
                 <HeaderActionContainer>
-                    <Icon icon="Info" width="20px" height="20px" />
-                    <Flex>
+                    <HeaderButton>
+                        <Icon icon="Info" />
+                    </HeaderButton>
+                    <HeaderButton>
                         <Icon icon="Ether" />
                         <HeaderFont>Ethereum Ma..</HeaderFont>
-                    </Flex>
-                    <Flex>
-                        <Icon icon="Chainlink" />
+                    </HeaderButton>
+                    <HeaderButton>
+                        <Image src={WalletFilled} alt="" $style={{ w: '16px', h: '16px', bradius: '0' }} />
                         <HeaderFont>{name}</HeaderFont>
-                    </Flex>
+                    </HeaderButton>
                 </HeaderActionContainer>
                 <IconContainer>
                     <Image src={Ether} alt="" $style={{ w: '14px', h: '20px', bradius: '0' }} />
@@ -68,8 +74,8 @@ const Header = () => {
                     </Flex>
                 </Flex>
                 <MobileMenuItem isFirst>/ Staking /</MobileMenuItem>
-                <MobileMenuItem>Overview</MobileMenuItem>
-                <MobileMenuItem>Rewards</MobileMenuItem>
+                <MobileMenuItem onClick={() => { setVisible(false); navigate(_ROUTERS._HOME) }}>Overview</MobileMenuItem>
+                <MobileMenuItem onClick={() => { setVisible(false); navigate(_ROUTERS._REWARDS) }}>Rewards</MobileMenuItem>
             </Drawer>
         </HeaderContainer>
     )

@@ -54,7 +54,7 @@ const setStyle = (
 
 export const HeadingContainer = styled.p<HeadingPropsType>`
   ${({ level }) => (level ? `font-size: var(--font-size-${level});` : ``)}
-  font-weight: ${({ weight }) => weight ?? GV('weight-xl')};
+  font-weight: ${({ weight }) => weight ?? GV('weight-lg')};
 	font-family: ${GV('font1')};
   line-height: ${GV('line-height')};
   letter-spacing: -.04rem;

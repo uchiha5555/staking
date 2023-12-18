@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Background from '@/assets/img/hexagon-bg.png';
+import { GV } from "@/utils/style.util";
+import { Heading } from "@/components/basic";
 
 export const BlogContainer = styled.div`
     display: flex;
@@ -44,7 +46,10 @@ export const CardContainer = styled.div`
 export const CardContent = styled.div`
     position: relative;
     margin-top: 64px;
-    color: var(--primary);
+    color: ${GV('header')};
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Circular Book';
 
     &:before {
         content: '';

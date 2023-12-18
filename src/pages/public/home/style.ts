@@ -9,6 +9,7 @@ export const HomeContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 960px;
+  min-height: 900px;
   width: 100%;
   height: 100%;
   z-index: 0;
@@ -23,7 +24,7 @@ export const HomeWrapper = styled.div`
 
 export const BackgroundContainer = styled.div`
   position: absolute;
-  top: -150px;
+  top: -60px;
   left: -20px;
   z-index: -1;
 `

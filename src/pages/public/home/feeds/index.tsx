@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FeedsContainer, LaptopPaginationContainer, MobilePaginationContainer, NotifyContainer, PageButton, PaginationContainer, StateTable, StateTableHeader, StatusBar, StatusWrapper, SuccessBadge, TableCellContainer, TableContainer, TitleContainer } from './style'
 import { Flex, Grid, Heading, P, Span } from '@/components/basic'
 import { Icon } from '@/components/custom'
@@ -16,27 +16,27 @@ const columns = [
       </TableCellContainer>
     ),
     key: 'oracle_name',
-    width: '200px'
+    width: '100px'
   },
   {
     title: 'Lastest answer',
     dataIndex: 'latest_answer',
     render: (text: any, record: any, index: number) => <Span $style={{ color: 'color-placeholder', size: '14px' }}>{text}</Span>,
-    width: '150px',
+    width: '100px',
     key: 'latest_answer'
   },
   {
     dataIndex: 'date',
     title: 'Date',
     render: (text: any, record: any, index: number) => <Span $style={{ color: 'color-placeholder', size: '14px' }}>{text}</Span>,
-    width: '300px',
+    width: '200px',
     key: 'date',
   },
   {
     dataIndex: 'status',
     title: 'Status',
     render: (text: any, record: any, index: number) => <SuccessBadge><Span $style={{ color: 'success', size: '14px' }}>{text}</Span></SuccessBadge>,
-    width: '210px',
+    width: '100px',
     key: 'status'
   },
   {
@@ -47,14 +47,16 @@ const columns = [
 ];
 
 
+
 const Feeds = () => {
+  const [pageCount, setPageCount] = useState(1);
   return (
     <FeedsContainer>
-      <Heading level={2} $style={{ color: 'header' }}>Data feeds secured</Heading>
+      <Heading level={3} $style={{ color: 'header', weight: '500' }}>Data feeds secured</Heading>
       <StateTableHeader>
         <TitleContainer>
-          <Icon icon='Ether' width='auto' height='32px' />
-          <P $style={{ color: 'header', size: '27px' }}>ETH/USD Feed</P>
+          <Icon icon='Ether1' width='auto' height='32px' />
+          <Heading level={4} $style={{ color: 'header', weight: '500' }}>ETH/USD Feed</Heading>
           <Icon icon='OutLink' width='auto' height='16px' />
         </TitleContainer>
         <StatusBar>
@@ -68,53 +70,53 @@ const Feeds = () => {
             }
           }}>
             <StatusWrapper>
-              <Flex $style={{ vAlign: 'center', gap: '8px' }}>
+              <Flex $style={{ vAlign: 'center', fDirection: 'row', gap: '8px' }}>
                 <Span $style={{ color: 'color-status', size: '14px' }}>Answer</Span>
                 <Icon icon='Sub' width='auto' height='12px' />
               </Flex>
-              <P $style={{ color: 'color-number', size: '23px' }}>$2,230.31</P>
+              <Heading level={5} $style={{ color: 'number', weight: '500' }}>$2,230.31</Heading>
             </StatusWrapper>
             <StatusWrapper>
-              <Flex $style={{ vAlign: 'center', gap: '8px' }}>
+              <Flex $style={{ vAlign: 'center', fDirection: 'row', gap: '8px' }}>
                 <Span $style={{ color: 'color-status', size: '14px' }}>Oracle responses</Span>
                 <Icon icon='Sub' width='auto' height='12px' />
               </Flex>
-              <P $style={{ color: 'color-number', size: '23px' }}>31/31</P>
+              <Heading level={5} $style={{ color: 'number', weight: '500' }}>29/31</Heading>
             </StatusWrapper>
             <StatusWrapper>
-              <Flex $style={{ vAlign: 'center', gap: '8px' }}>
+              <Flex $style={{ vAlign: 'center', fDirection: 'row', gap: '8px' }}>
                 <Span $style={{ color: 'color-status', size: '14px' }}>Last update</Span>
                 <Icon icon='Sub' width='auto' height='12px' />
               </Flex>
-              <P $style={{ color: 'color-number', size: '23px' }}>19 minutes ago</P>
+              <Heading level={5} $style={{ color: 'number', weight: '500' }}>6 minutes ago</Heading>
             </StatusWrapper>
             <StatusWrapper>
-              <Flex $style={{ vAlign: 'center', gap: '8px' }}>
+              <Flex $style={{ vAlign: 'center', fDirection: 'row', gap: '8px' }}>
                 <Span $style={{ color: 'color-status', size: '14px' }}>Alerts raised</Span>
                 <Icon icon='Sub' width='auto' height='12px' />
               </Flex>
-              <P $style={{ color: 'color-number', size: '23px' }}>0</P>
+              <Heading level={5} $style={{ color: 'number', weight: '500' }}>0</Heading>
             </StatusWrapper>
           </Grid>
         </StatusBar>
       </StateTableHeader>
       <StateTable>
-        <P $style={{ color: 'header', size: '27px' }}>Node operators</P>
+        <Heading level={4} $style={{ color: 'header', weight: '500' }}>Node operators</Heading>
         <TableContainer>
-          <Table columns={columns} dataSource={mockData} scroll={{ x: 1100 }} pagination={false} />
+          <Table columns={columns} dataSource={mockData.slice(pageCount * 10, pageCount * 10 + 10)} scroll={{ x: 900 }} pagination={false} />
         </TableContainer>
         <PaginationContainer>
-          <PageButton color='#CED0D5'>Prev</PageButton>
+          <PageButton color='#CED0D5' onClick={() => pageCount > 0 && setPageCount(pageCount - 1)}>Prev</PageButton>
           <LaptopPaginationContainer>
-            <P $style={{ color: 'color-placeholder', size: '15px' }}>Showing 1 to 10 of 31 entries</P>
+            <P $style={{ color: 'color-placeholder', size: '15px' }}>Showing {pageCount * 10 < 1 ? 1 : pageCount * 10} to {pageCount * 10 + 10 < mockData.length ? pageCount * 10 + 10 : mockData.length} of {mockData.length} entries</P>
           </LaptopPaginationContainer>
-          <PageButton color='#375BD2'>Next</PageButton>
+          <PageButton color='#375BD2' onClick={() => pageCount * 10 + 10 < mockData.length && setPageCount(pageCount + 1)}>Next</PageButton>
         </PaginationContainer>
         <MobilePaginationContainer>
-          <P $style={{ color: 'color-placeholder', size: '15px' }}>Showing 1 to 10 of 31 entries</P>
+          <P $style={{ color: 'color-placeholder', size: '15px' }}>Showing {pageCount * 10 < 1 ? 1 : pageCount * 10} to {pageCount * 10 + 10 < mockData.length ? pageCount * 10 + 10 : mockData.length} of {mockData.length} entries</P>
         </MobilePaginationContainer>
       </StateTable>
-      <NotifyContainer>Please see the following blog posts and Terms of Service for important information and disclosures. <P $style={{ color: 'color-placeholder', size: '16px', align: 'center' }}>Chainlink Staking v0.2 is currently in beta.</P></NotifyContainer>
+      <NotifyContainer>Please see the following blog posts and <Span $style={{ color: 'primary' }}>Terms of Service</Span> for important information and disclosures. <P $style={{ color: 'color-placeholder', size: '16px', align: 'center' }}>Chainlink Staking v0.2 is currently in beta.</P></NotifyContainer>
     </FeedsContainer>
   )
 }

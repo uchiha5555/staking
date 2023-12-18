@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    padding: 120px 64px;
+    /* display: flex; */
+    /* justify-content: center; */
+    padding: 64px 0;
     width: 100%;
     height: 100%;
     background: #252E42;
@@ -21,7 +21,10 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterWrapper = styled.div`
-    max-width: 1204px;
+    max-width: min(calc(1440px - 2 * 64px) ,calc(100% - 2 * 64px));
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 `;
 
 export const CopyrightContainer = styled.div`
@@ -40,6 +43,18 @@ export const CopyrightContainer = styled.div`
         padding-right: 24px;
     }
 `;
+
+export const FooterColumnWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    /* width: 260px; */
+
+    &>* {
+        :not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+`
 
 export const CopyrightWrapper = styled.div`
     display: flex;

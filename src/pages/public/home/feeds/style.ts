@@ -35,6 +35,7 @@ export const StateTable = styled.div`
 export const TitleContainer = styled.div`
     display: flex;
     align-items: center;
+    margin-top: 16px;
 
     &>* {
         :not(:last-child) {
@@ -50,16 +51,27 @@ export const StatusBar = styled.div`
 export const StatusWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    padding-left: 32px;
+    /* padding-left: 32px; */
 
     &>* {
         :not(:last-child) {
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
     }
 
+    /* &:after {
+        content: "";
+        width: 1px;
+        height: calc(100% - 2 * 8px);
+        background-color: #ecedef;
+        position: absolute;
+        margin-left: calc(-1 * 32px);
+        top: 8px;
+    } */
+
     :not(:first-child) {
-        border-left: 1px solid #ECEDEF;
+        border-left: 1px solid #ecedef;
+        padding-left: 32px;
 
         @media (max-width: 768px) {
             border: none;
@@ -107,7 +119,7 @@ export const PaginationContainer = styled.div`
     margin-top: 24px;
 `;
 
-export const PageButton = styled.div<{ color?: string }>`
+export const PageButton = styled.button<{ color?: string }>`
     ${({ color }) => color && `border: 2px solid ${color};`}
     ${({ color }) => color && `color: ${color};`}
     border-radius: 4px;

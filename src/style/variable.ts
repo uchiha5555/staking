@@ -19,6 +19,7 @@ const variables = {
   'color-status': '#555C6C',
   'color-number': '#0C162C',
   'color-subtitle': '#1a2b6b',
+  'number': '#0c162c',
   border1: '#C6E0FF80',
   border2: '#2B2928',
 
@@ -35,7 +36,7 @@ const variables = {
   'radius-round': '999px',
 
   font: 'Circular, Tahoma',
-  font1: 'Circular Bold',
+  font1: 'Circular Book',
 
   'weight-xxl': '900',
   'weight-xl': '700',
@@ -47,9 +48,9 @@ const variables = {
   'font-size-1': '3rem',
   'font-size-2': '2.5rem',
   'font-size-3': '2rem',
-  'font-size-4': '1.25rem',
-  'font-size-5': '0.875rem',
-  'font-size-6': '0.75rem',
+  'font-size-4': '1.75rem',
+  'font-size-5': '1.5rem',
+  'font-size-6': '1rem',
   'font-size-7': '0.5rem',
 
   'line-height': '1.3',

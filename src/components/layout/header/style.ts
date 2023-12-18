@@ -23,13 +23,15 @@ export const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
   max-width: min(calc(1440px - 2 * 64px),calc(100% - 2 * 64px));
   width: 100%;
   height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: 768px) {
     max-width: 100%;
+    padding: 0 24px;
   }
 `;
 
@@ -71,14 +73,14 @@ export const HeaderActionContainer = styled.div`
 
   &>* {
     :not(:last-child) {
-      margin-right: 24px;
+      margin-right: 8px;
     }
   }
 
   @media (max-width: 768px) {
     display: none;
   }
-`
+`;
 
 export const LastNavItem = styled.div`
   margin-left: 16px;
@@ -154,4 +156,19 @@ export const MobileMenuItem = styled.div<{ isFirst?: boolean }>`
   font-size: 1rem;
 
   ${({ isFirst }) => isFirst ? `font-size: 0.875rem; color: #b7bac0;` : ``}
+`;
+
+export const HeaderButton = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  transition: all .3s ease;
+  border: 1px solid transparent;
+  white-space: nowrap;
+
+  &:hover {
+    border: 1px solid #dfe7fb;
+    border-radius: 4px;
+    opacity: .9;
+  }
 `

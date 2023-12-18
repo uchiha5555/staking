@@ -99,8 +99,8 @@ export const VersionContainer = styled.div`
 `;
 
 export const BackgroundContainer = styled.div`
-  position: fixed;
-  top: 0px;
-  left: -20px;
+  position: absolute;
+  top: -180px;
+  left: -500px;
   z-index: -1;
 `
