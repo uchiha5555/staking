@@ -42,7 +42,7 @@ const Staking = () => {
                 <StatusCard isLast>
                     <Chart />
                     <TextContainer>
-                        <CustomCaption $style={{  }}>v0.2 Community Pool</CustomCaption>
+                        <CustomCaption>v0.2 Community Pool</CustomCaption>
                         <CustomFont>40,875,000</CustomFont>
                         <CustomCaption>/40,875,000 Link</CustomCaption>
                     </TextContainer>

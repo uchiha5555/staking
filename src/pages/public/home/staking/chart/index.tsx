@@ -1,6 +1,6 @@
 import { GV } from '@/utils/style.util';
 import React from 'react';
-import { PieChart, Pie, Cell, Label, Text, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 const data = [
   { name: 'Group A', value: 1, color: 'rgb(236, 237, 239)' },
