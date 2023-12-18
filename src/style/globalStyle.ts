@@ -419,6 +419,10 @@ const GlobalStyle = createGlobalStyle`
 			width: 0px;
 		}
 	}
+
+	.ant-table-wrapper .ant-table-container::after, .ant-table-wrapper .ant-table-container::before {
+		box-shadow: none !important;
+	}
 `;
 
 export default GlobalStyle;
