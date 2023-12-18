@@ -1,10 +1,10 @@
 import { Icon } from "@/components/custom";
 import { HeaderActionContainer, HeaderContainer, HeaderCustomButton, HeaderFlex, HeaderFont, HeaderWrapper, IconContainer, LastNavItem, MobileHeaderCustomButton, MobileMenuIcon, MobileMenuItem, NavItem, NavList } from "./style";
 import { Drawer } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useScroll from "@/hooks/useScroll";
 import { Flex, Span } from "@/components/basic";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import _ROUTERS from "@/constants/route.constant";
 
 import Wallet from '@/assets/img/wallet-1.svg';
@@ -14,6 +14,14 @@ import Image from "@/components/basic/img";
 const Header = () => {
     const [visible, setVisible] = useState(false);
     const [, scrollY,] = useScroll();
+    const { hash, pathname, search } = useLocation();
+    const [name, setName] = useState('Detecting wallet')
+
+    useEffect(() => {
+        if (pathname === _ROUTERS._REWARDS) {
+            setTimeout(() => {setName('Connect Wallet')}, 1000);
+        }
+    }, [pathname]);
 
     return (
         <HeaderContainer isTop={!(scrollY > 50)}>
@@ -41,7 +49,7 @@ const Header = () => {
                     </Flex>
                     <Flex>
                         <Icon icon="Chainlink" />
-                        <HeaderFont>Detecting wallet</HeaderFont>
+                        <HeaderFont>{name}</HeaderFont>
                     </Flex>
                 </HeaderActionContainer>
                 <IconContainer>

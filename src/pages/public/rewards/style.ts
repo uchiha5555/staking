@@ -3,12 +3,14 @@ import { GV } from "@/utils/style.util";
 import styled from "styled-components";
 
 export const RewardsContainer = styled.div`
+    position: relative;
     display: flex;
     justify-content: center;
     max-width: 900px;
     margin-top: 120px;
     margin-left: auto;
     margin-right: auto;
+    z-index: 0;
 `;
 
 export const RewardsWrapper = styled.div`
@@ -39,6 +41,7 @@ export const MainWrapper = styled.div`
     border: 1px solid #ecedef;
     border-radius: 4px;
     width: 100%;
+    background: var(--white);
 
     @media (min-width: 768px) {
         max-width: 648px;
@@ -48,6 +51,7 @@ export const MainWrapper = styled.div`
         padding-left: 24px;
         padding-right: 24px;
     }
+    z-index: 100;
 `;
 
 export const Title = styled(Heading)`
@@ -92,4 +96,11 @@ export const VersionContainer = styled.div`
     @media (max-width: 479px) {
         display: none;
     }
+`;
+
+export const BackgroundContainer = styled.div`
+  position: fixed;
+  top: 0px;
+  left: -20px;
+  z-index: -1;
 `

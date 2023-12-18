@@ -111,7 +111,8 @@ export const PageButton = styled.div<{ color?: string }>`
     ${({ color }) => color && `border: 2px solid ${color};`}
     ${({ color }) => color && `color: ${color};`}
     border-radius: 4px;
-    padding: 13px 26px;
+    padding: 8px 24px;
+    font-size: 14px;
 `;
 
 export const NotifyContainer = styled.div`

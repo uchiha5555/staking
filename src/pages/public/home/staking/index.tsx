@@ -4,7 +4,7 @@ import { Flex, Grid, Heading, P, Span } from '@/components/basic'
 import { Icon } from '@/components/custom';
 import Chart from './chart';
 import { GV } from '@/utils/style.util';
-
+import CardBg from '@/assets/img/staked-coins.svg';
 
 
 const Staking = () => {
@@ -27,19 +27,19 @@ const Staking = () => {
             }}>
                 <StatusCard>
                     <P $style={{ size: '28px', color: 'header' }}>v0.2 open for General Access</P>
-                    <P $style={{ size: '16px', color: 'color-placeholder' }}>Staking v0.2 is now open to the public. Anyone can stake, provided the pool is not full. Learn more</P>
+                    <P $style={{ size: '16px', color: 'color-placeholder' }}>Staking v0.2 is now open to the public. Anyone can stake, provided the pool is not full. <Span $style={{ color: 'primary' }}>Learn more</Span></P>
                 </StatusCard>
-                <StatusCard>
+                <StatusCard bg={CardBg}>
                     <P $style={{ size: '28px', color: 'header' }}>4.32%</P>
                     <Flex>
-                        <P $style={{ size: '16px', color: 'color-placeholder' }}>Current v0.2 Variable Reward Rate</P>
+                        <P $style={{ size: '16px', color: 'color-subtitle', weight: '700' }}>Current v0.2 Variable Reward Rate</P>
                         <Icon icon='Sub' width='12px' height='12px' />
                     </Flex>
-                    <P $style={{ size: '16px', color: 'color-placeholder' }}>LINK rewards divided by total LINK staked. Learn more</P>
+                    <P $style={{ size: '16px', color: 'color-placeholder' }}>LINK rewards divided by total LINK staked. <Span $style={{ color: 'primary' }}>Learn more</Span></P>
                 </StatusCard>
             </Grid>
             <Grid $style={{ rows: '1', columns: '1' }}>
-                <StatusCard>
+                <StatusCard isLast>
                     <Chart />
                     <OptionContainer>
                         <OptionTextContainer>

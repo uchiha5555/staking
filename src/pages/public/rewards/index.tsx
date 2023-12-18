@@ -1,5 +1,5 @@
-import React from 'react'
-import { ButtonContainer, Caption, ConnectButton, Description, MainWrapper, RewardsContainer, RewardsWrapper, Title, VersionContainer } from './style'
+import React, { useEffect, useState } from 'react'
+import { BackgroundContainer, ButtonContainer, Caption, ConnectButton, Description, MainWrapper, RewardsContainer, RewardsWrapper, Title, VersionContainer } from './style'
 import { Flex, Heading, P, Span } from '@/components/basic'
 import Image from '@/components/basic/img';
 
@@ -7,8 +7,18 @@ import WalletImage from '@/assets/img/wallet.svg';
 import { Icon } from '@/components/custom';
 
 const Rewards = () => {
+    const [name, setName] = useState('Detecting Wallet');
+    useEffect(() => {
+        setTimeout(() => {
+            setName('Connect wallet');
+        }, 1000);
+    })
+
   return (
     <RewardsContainer>
+        <BackgroundContainer>
+            <Icon icon='Rect' width="100%" height="100%" />
+        </BackgroundContainer>
         <RewardsWrapper>
             <Flex $style={{ hAlign: 'space-between', vAlign: 'flex-end', w: '100%', mb: '24px' }}>
                 <Flex $style={{ fDirection: 'column' }}>
@@ -26,7 +36,7 @@ const Rewards = () => {
                 <ButtonContainer>
                     <ConnectButton>
                         <Icon icon='Save' />
-                        <Span>Connect wallet</Span>
+                        <Span>{name}</Span>
                     </ConnectButton>
                 </ButtonContainer>
             </MainWrapper>

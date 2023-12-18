@@ -20,7 +20,7 @@ export const BlogWrapper = styled.div`
     margin-top: 40px;
     overflow-x: auto;
     /* min-width: 900px; */
-    max-width: 900px;
+    max-width: 960px;
     margin-bottom: 64px;
 `;
 
@@ -37,7 +37,7 @@ export const CardContainer = styled.div`
     background-color: #fff;
 
     &:not(:last-child) {
-        margin-right: 16px;
+        margin-right: 26px;
     }
 `;
 

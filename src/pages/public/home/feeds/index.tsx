@@ -114,7 +114,7 @@ const Feeds = () => {
           <P $style={{ color: 'color-placeholder', size: '15px' }}>Showing 1 to 10 of 31 entries</P>
         </MobilePaginationContainer>
       </StateTable>
-      <NotifyContainer>Please see the following blog posts and Terms of Service for important information and disclosures. Chainlink Staking v0.2 is currently in beta.</NotifyContainer>
+      <NotifyContainer>Please see the following blog posts and Terms of Service for important information and disclosures. <P $style={{ color: 'color-placeholder', size: '16px', align: 'center' }}>Chainlink Staking v0.2 is currently in beta.</P></NotifyContainer>
     </FeedsContainer>
   )
 }

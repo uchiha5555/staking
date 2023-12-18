@@ -18,6 +18,7 @@ const variables = {
   'color-placeholder': '#6D7380',
   'color-status': '#555C6C',
   'color-number': '#0C162C',
+  'color-subtitle': '#1a2b6b',
   border1: '#C6E0FF80',
   border2: '#2B2928',
 

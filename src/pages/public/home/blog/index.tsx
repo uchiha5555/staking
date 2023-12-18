@@ -8,7 +8,7 @@ const Blogs = () => {
     <BlogContainer>
       <Heading level={2} $style={{ color: 'header' }}>Read more about Chainlink Staking</Heading>
       <BlogWrapper>
-        <Grid $style={{ columns: '4', w: '100%', fWrap: 'no-wrap', minW: '900px' }}>
+        <Grid $style={{ columns: '4', w: '100%', fWrap: 'no-wrap', minW: '960px' }}>
           <CardContainer>
             <Flex $style={{
               hAlign: 'space-between',
