@@ -65,7 +65,7 @@ export default function Chart() {
   };
 
   return (
-    <div style={{ width: "100%", height: '100%' }}>
+    <div style={{ width: "100%", height: '100%', minWidth: "200px", minHeight: "300px" }}>
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           innerRadius="90%"
