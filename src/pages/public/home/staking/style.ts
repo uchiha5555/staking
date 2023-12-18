@@ -27,4 +27,34 @@ export const StatusCard = styled.div`
     border-radius: 4px;
     border: 1px solid #ECEDEF;
     background: #FFF;
+`;
+
+export const RadioButton = styled.div<{ bg?: string }>`
+    ${({ bg }) => bg ? `background: ${bg};` : ''}
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+`
+
+export const OptionContainer = styled.div` 
+    display: flex;
+    justify-content: center;
+    margin: 0;
+
+    &>* {
+        :not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+`;
+
+export const OptionTextContainer = styled.div`
+    display: flex;
+    align-items: center;
+    
+    &>* {
+        :not(:last-child) {
+            margin-right: 8px;
+        }
+    }
 `

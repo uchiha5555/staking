@@ -1,41 +1,86 @@
-import React from 'react';
-import { RadialBarChart, PolarAngleAxis, RadialBar } from 'recharts';
+import React from "react";
+import {
+  RadialBarChart,
+  RadialBar,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
-const Chart = () => {
-  // Sample data
-  const data = [
-    { name: 'A', x: 1, fill: 'green' },
-    { name: 'B', x: 2, fill: 'yellow' },
-    // { name: 'C', x: 3, fill: 'aqua' },
-    // { name: 'D', x: 4, fill: 'blue' },
-    // { name: 'E', x: 5, fill: 'orange' },
-    // { name: 'F', x: 6, fill: 'red' },
-    // { name: 'G', x: 7, fill: 'black' },
-    // { name: 'H', x: 8, fill: 'purple' },
-    // { name: 'I', x: 9, fill: 'gray' },
-  ];
+const data = [
+  {
+    name: "40,875,000",
+    value: 1,
+    fill: "#83a6ed",
+  },
+];
 
-  return (
-    <RadialBarChart width={366} height={288} data={data}
-    // cx={30 / 2}
-    // cy={30 / 2}
-    barSize={25}
-    startAngle={-45}
-    endAngle={225}>
-      <PolarAngleAxis
-        type="number"
-        domain={[0, 10]}
-        angleAxisId={0}
-        tick={false}
-      />
-      <RadialBar
-        background
-        dataKey="value"
-        cornerRadius={30 / 2}
-        fill="#0BEFF2"
-      />
-    </RadialBarChart>
-  );
+const style = {
+  top: 0,
+  left: 350,
+  lineHeight: "24px",
 };
 
-export default Chart;
+export default function Chart() {
+  const CustomLabel = ({ viewBox, value, name }: any) => {
+    const { cx, cy } = viewBox;
+    return (
+      <>
+        <text
+          x={cx}
+          y={cy - 40}
+          fill="#6D7380"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fontFamily="circular"
+          fontSize={16}
+        >
+          v0.2 Community Pool
+        </text>
+        <text
+          x={cx}
+          y={cy}
+          fill="#375bd2"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fontFamily="circular"
+          fontSize={30}
+        >
+          {name}
+        </text>
+        <text
+          x={cx}
+          y={cy + 40}
+          fill="#6D7380"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fontFamily="circular"
+          fontSize={16}
+        >
+          / {name} LINK
+        </text>
+      </>
+    );
+  };
+
+  return (
+    <div style={{ width: "100%", height: '100%' }}>
+      <ResponsiveContainer width="100%" height="100%">
+        <RadialBarChart
+          innerRadius="80%"
+          outerRadius="100%"
+          data={data}
+          startAngle={-45}
+          endAngle={225}
+        >
+          <RadialBar
+            background
+            label={<CustomLabel />}
+            dataKey="value"
+            cornerRadius={30 / 2}
+            fill="#0BEFF2"
+          />
+        </RadialBarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}

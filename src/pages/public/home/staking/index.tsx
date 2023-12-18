@@ -1,8 +1,9 @@
 import React from 'react'
-import { StakingContainer, StatusCard } from './style'
-import { Flex, Grid, Heading, P } from '@/components/basic'
+import { OptionContainer, OptionTextContainer, RadioButton, StakingContainer, StatusCard } from './style'
+import { Flex, Grid, Heading, P, Span } from '@/components/basic'
 import { Icon } from '@/components/custom';
 import Chart from './chart';
+import { GV } from '@/utils/style.util';
 
 
 
@@ -40,6 +41,16 @@ const Staking = () => {
             <Grid $style={{ rows: '1', columns: '1' }}>
                 <StatusCard>
                     <Chart />
+                    <OptionContainer>
+                        <OptionTextContainer>
+                            <RadioButton bg={GV('primary')} />
+                            <Span $style={{ color: 'color-placeholder' }}>Filled</Span>
+                        </OptionTextContainer>
+                        <OptionTextContainer>
+                            <RadioButton bg='#ecedef' />
+                            <Span $style={{ color: 'color-placeholder' }}>Unfilled</Span>
+                        </OptionTextContainer>
+                    </OptionContainer>
                 </StatusCard>
             </Grid>
         </Grid>
