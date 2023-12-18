@@ -1,5 +1,5 @@
 import React from 'react'
-import { FeedsContainer, NotifyContainer, PageButton, PaginationContainer, StateTable, StateTableHeader, StatusBar, StatusWrapper, SuccessBadge, TableCellContainer, TableContainer, TitleContainer } from './style'
+import { FeedsContainer, LaptopPaginationContainer, MobilePaginationContainer, NotifyContainer, PageButton, PaginationContainer, StateTable, StateTableHeader, StatusBar, StatusWrapper, SuccessBadge, TableCellContainer, TableContainer, TitleContainer } from './style'
 import { Flex, Grid, Heading, P, Span } from '@/components/basic'
 import { Icon } from '@/components/custom'
 import { Table } from 'antd';
@@ -105,9 +105,14 @@ const Feeds = () => {
         </TableContainer>
         <PaginationContainer>
           <PageButton color='#CED0D5'>Prev</PageButton>
-          <P $style={{ color: 'color-placeholder', size: '15px' }}>Showing 1 to 10 of 31 entries</P>
+          <LaptopPaginationContainer>
+            <P $style={{ color: 'color-placeholder', size: '15px' }}>Showing 1 to 10 of 31 entries</P>
+          </LaptopPaginationContainer>
           <PageButton color='#375BD2'>Next</PageButton>
         </PaginationContainer>
+        <MobilePaginationContainer>
+          <P $style={{ color: 'color-placeholder', size: '15px' }}>Showing 1 to 10 of 31 entries</P>
+        </MobilePaginationContainer>
       </StateTable>
       <NotifyContainer>Please see the following blog posts and Terms of Service for important information and disclosures. Chainlink Staking v0.2 is currently in beta.</NotifyContainer>
     </FeedsContainer>

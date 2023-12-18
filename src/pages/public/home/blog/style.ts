@@ -18,7 +18,10 @@ export const BlogContainer = styled.div`
 
 export const BlogWrapper = styled.div`
     margin-top: 40px;
-    overflow: auto;
+    overflow-x: auto;
+    /* min-width: 900px; */
+    max-width: 900px;
+    margin-bottom: 64px;
 `;
 
 
@@ -32,7 +35,10 @@ export const CardContainer = styled.div`
     border: 1px solid #ecedef;
     border-radius: 4px;
     background-color: #fff;
-    margin-bottom: 64px;
+
+    &:not(:last-child) {
+        margin-right: 16px;
+    }
 `;
 
 export const CardContent = styled.div`

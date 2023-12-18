@@ -55,15 +55,15 @@ export const StatusWrapper = styled.div`
     &>* {
         :not(:last-child) {
             margin-bottom: 12px;
-
-            @media (max-width: 768px) {
-                border: none;
-            }
         }
     }
 
     :not(:first-child) {
         border-left: 1px solid #ECEDEF;
+
+        @media (max-width: 768px) {
+            border: none;
+        }
     }
 
     @media (max-width: 768px) {
@@ -120,3 +120,19 @@ export const NotifyContainer = styled.div`
     font-size: 16px;
     text-align: center;
 `;
+
+export const LaptopPaginationContainer = styled.div`
+    @media (max-width: 768px) {
+        display: none;
+    }
+`
+
+export const MobilePaginationContainer = styled.div`
+    display: none;
+    width: 100%;
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+    }
+`
