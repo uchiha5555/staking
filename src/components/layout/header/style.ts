@@ -2,6 +2,17 @@ import { Span } from "@/components/basic";
 import { GV } from "@/utils/style.util";
 import styled from "styled-components";
 
+export const ErrorText = styled.div`
+  position: fixed;
+
+  top: 80px;
+  left: 200px;
+
+  font-size: 40px;
+  line-height: 50px;
+  color: red;
+`
+
 export const HeaderContainer = styled.header<{ isTop?: boolean }>`
   position: fixed;
   /* ${({ isTop }) =>

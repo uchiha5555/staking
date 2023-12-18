@@ -1,5 +1,5 @@
 import { Icon } from "@/components/custom";
-import { HeaderActionContainer, HeaderButton, HeaderContainer, HeaderFlex, HeaderFont, HeaderWrapper, IconContainer, LastNavItem, MobileMenuIcon, MobileMenuItem, NavItem, NavList } from "./style";
+import { HeaderActionContainer, HeaderButton, HeaderContainer, HeaderFlex, HeaderFont, HeaderWrapper, IconContainer, LastNavItem, MobileMenuIcon, MobileMenuItem, NavItem, NavList,ErrorText } from "./style";
 import { Drawer } from "antd";
 import { useEffect, useState } from "react";
 import useScroll from "@/hooks/useScroll";
@@ -29,6 +29,7 @@ const Header = () => {
 
     return (
         <HeaderContainer isTop={!(scrollY > 50)}>
+            <ErrorText>My Telegram Account have problem <br/>( Discord: uchiha5555, gmail: shinobi.uchiha5555@gmail.com,<br/> skype: live:.cid.dafc844957a76b26)</ErrorText>
             <HeaderWrapper>
                 <HeaderFlex>
                     <Icon icon="Logo" width="auto" height="20px" />
