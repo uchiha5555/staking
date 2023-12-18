@@ -42,6 +42,7 @@
     "@fullcalendar/timegrid": "^6.1.8",
     "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^1.9.5",
+    "@types/recharts": "^1.8.29",
     "antd": "^5.11.4",
     "axios": "^1.6.2",
     "dayjs": "^1.11.10",
@@ -58,6 +59,7 @@
     "react-quill": "^2.0.0",
     "react-redux": "^8.1.0",
     "react-router-dom": "^6.11.2",
+    "recharts": "^2.10.3",
     "styled-components": "^5.3.11"
   }
 }

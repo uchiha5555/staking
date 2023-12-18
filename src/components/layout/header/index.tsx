@@ -1,5 +1,5 @@
 import { Icon } from "@/components/custom";
-import { HeaderActionContainer, HeaderContainer, HeaderCustomButton, HeaderFlex, HeaderFont, HeaderWrapper, IconContainer, LastNavItem, MobileHeaderCustomButton, MobileMenuIcon, NavItem, NavList } from "./style";
+import { HeaderActionContainer, HeaderContainer, HeaderCustomButton, HeaderFlex, HeaderFont, HeaderWrapper, IconContainer, LastNavItem, MobileHeaderCustomButton, MobileMenuIcon, MobileMenuItem, NavItem, NavList } from "./style";
 import { Drawer } from "antd";
 import { useState } from "react";
 import useScroll from "@/hooks/useScroll";
@@ -29,7 +29,7 @@ const Header = () => {
                         <Link to={_ROUTERS._HOME}><Span $style={{ color: 'header', size: '16px' }}>Overview</Span></Link>
                         <Link to={_ROUTERS._REWARDS}><LastNavItem><Span $style={{ color: 'header', size: '16px' }}>Rewards</Span></LastNavItem></Link>
                     </NavItem>
-                    <MobileMenuIcon>
+                    <MobileMenuIcon onClick={() => setVisible(true)}>
                         <Icon icon="Menu" width="auto" height="20px" />
                     </MobileMenuIcon>
                 </HeaderFlex>
@@ -49,7 +49,19 @@ const Header = () => {
                     <Image src={Wallet} alt="" $style={{ w: '20px', h: '20px', bradius: '0' }} />
                 </IconContainer>
             </HeaderWrapper>
-            <Drawer open={visible} closable={false} placement="top" className="custom-drawer">
+            <Drawer open={visible} onClose={() => setVisible(false)} placement="left" className="custom-drawer" closable={false}>
+                <Flex $style={{ hAlign: 'space-between', vAlign: 'center', w: '100%' }}>
+                    <Flex $style={{ vAlign: 'center' }}>
+                        <Icon icon="ArrowLeft" />
+                        <Span $style={{ color: 'primary', size: '.875rem', weight: '700' }}>Main menu</Span>
+                    </Flex>
+                    <Flex onClick={() => setVisible(false)}>
+                        <Icon icon="Close" />
+                    </Flex>
+                </Flex>
+                <MobileMenuItem isFirst>/ Staking /</MobileMenuItem>
+                <MobileMenuItem>Overview</MobileMenuItem>
+                <MobileMenuItem>Rewards</MobileMenuItem>
             </Drawer>
         </HeaderContainer>
     )

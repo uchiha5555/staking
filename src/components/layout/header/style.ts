@@ -15,7 +15,7 @@ export const HeaderContainer = styled.header<{ isTop?: boolean }>`
   background: var(--white);
   width: 100%;
   min-height: 64px;
-  z-index: 9999;
+  z-index: 999;
   box-shadow: 0 4px 12px 0 rgba(0,0,0,.06);
 `;
 
@@ -141,4 +141,17 @@ export const MobileMenuIcon = styled.div`
   @media (max-width: 768px) {
     display: inline-flex;
   }
+`
+
+export const MobileMenuItem = styled.div<{ isFirst?: boolean }>`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  line-height: 1rem;
+  font-weight: 600;
+  color: ${GV('color-placeholder')};
+  font-size: 1rem;
+
+  ${({ isFirst }) => isFirst ? `font-size: 0.875rem; color: #b7bac0;` : ``}
 `

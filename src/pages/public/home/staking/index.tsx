@@ -1,7 +1,10 @@
 import React from 'react'
 import { StakingContainer, StatusCard } from './style'
 import { Flex, Grid, Heading, P } from '@/components/basic'
-import { Icon } from '@/components/custom'
+import { Icon } from '@/components/custom';
+import Chart from './chart';
+
+
 
 const Staking = () => {
   return (
@@ -35,7 +38,9 @@ const Staking = () => {
                 </StatusCard>
             </Grid>
             <Grid $style={{ rows: '1', columns: '1' }}>
-                
+                <StatusCard>
+                    <Chart />
+                </StatusCard>
             </Grid>
         </Grid>
     </StakingContainer>
